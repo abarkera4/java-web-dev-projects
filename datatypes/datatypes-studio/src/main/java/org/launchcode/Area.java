@@ -22,7 +22,7 @@ public class Area {
                     radius = -1;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalud input. Please enter a numeric value.");
+                System.out.println("Invalid input. Please enter a numeric value.");
             }
         } while (radius < 0);
 
