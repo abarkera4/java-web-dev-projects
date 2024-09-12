@@ -70,9 +70,6 @@ public class Student {
         return theStudent.getStudentId() == getStudentId();
     }
 
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
-    //  Student objects equal.
-
     public String getName() {
         return name;
     }
