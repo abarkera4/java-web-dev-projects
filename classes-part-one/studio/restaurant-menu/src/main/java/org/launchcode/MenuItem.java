@@ -1,6 +1,7 @@
 package org.launchcode;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class MenuItem {
         private String name;
@@ -9,12 +10,13 @@ public class MenuItem {
         private String category;
         private final LocalDate dateAdded;
 
-        public MenuItem (String name, double price, String description, String category) {
+
+        public MenuItem (String name, double price, String description, String category, String dateAdded) {
             this.name = name;
             this.price = price;
             this.description = description;
             this.category = category;
-            this.dateAdded = LocalDate.now();
+            this.dateAdded = LocalDate.parse(dateAdded);
         }
 
         public String getName() {
@@ -51,6 +53,18 @@ public class MenuItem {
 
         public LocalDate getDateAdded() {
             return dateAdded;
+        }
+
+        public Boolean isNewItem() {
+        LocalDate today = LocalDate.now();
+        double daysOnMenu = getDateAdded().until(today, ChronoUnit.DAYS);
+        return daysOnMenu < 30;
+        }
+
+        @Override
+        public String toString(){
+            String checkNew = isNewItem() ? "*** NEW ITEM ***" : "";
+            return name + checkNew + "\n" + description + " | $" + price;
         }
 
 }

@@ -1,8 +1,7 @@
 package org.launchcode;
 
 public class Main {
-
-    public static void main(String[] args){
+    public static void  main(String[] args) {
 
         MenuItem dish1 = new MenuItem("Spaghetti and Meatballs", 8.99,
                 "Perfect Al dente pasta with a Tomato Sauce and Meatballs", "entree", "1700-12-25");
@@ -22,5 +21,16 @@ public class Main {
         MenuItem dish6 = new MenuItem("Cherry Cheesecake", 8.99, "Silky Cheesecake Topped with " +
                 "Cherries", "dessert", "2024-09-16");
 
+        Menu studioMenu = new Menu();
+
+        studioMenu.addDish(dish1);
+        studioMenu.addDish(dish2);
+        studioMenu.addDish(dish3);
+        studioMenu.addDish(dish4);
+        studioMenu.addDish(dish5);
+        studioMenu.addDish(dish6);
+
+        System.out.println(studioMenu);
     }
+
 }
